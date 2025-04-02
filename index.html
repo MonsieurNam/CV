@@ -1,215 +1,737 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nguyen Ngo Nhat Nam - AI & Robotics Enthusiast. Personal CV and Portfolio showcasing projects, research, skills, and experience.">
-    <meta name="keywords" content="Nguyen Ngo Nhat Nam, AI Engineer, Machine Learning, Robotics, Deep Learning, Computer Vision, FPT University, Portfolio, CV, Resume">
-    <title>Nguyen Ngo Nhat Nam - AI & Robotics Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- !!! THAY THẾ DÒNG DƯỚI BẰNG MÃ FONT AWESOME KIT CỦA BẠN !!! -->
-    <script src="https://kit.fontawesome.com/bd273711dd.js" crossorigin="anonymous"></script>
-    <!-- Ví dụ Google Fonts (Inter & Roboto) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Nguyen Ngo Nhat Nam | AI Researcher & Robotics Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .section-divider {
+            border-bottom: 1px solid #e5e7eb;
+            width: 80%;
+            margin: 0 auto 2rem;
+        }
+        
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Animation for sections */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-section {
+            animation: fadeIn 0.6s ease forwards;
+        }
+        
+        /* Delay animations */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
 </head>
-<body>
-    <div class="container">
-        <!-- === HERO SECTION === -->
-        <header class="hero">
-            <!-- <img src="your-image.jpg" alt="Nguyen Ngo Nhat Nam" class="profile-pic"> -->
-            <h1>Nguyen Ngo Nhat Nam</h1>
-            <p class="tagline">AI & Robotics Enthusiast | Aspiring Machine Learning Engineer</p>
-            <p class="intro">
-                AI Engineering student at FPT University passionate about Robotics and Autonomous Systems. Driven to build intelligent solutions with hands-on experience in Deep Learning, Computer Vision, and practical project development from concept to deployment.
-            </p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-nam-893b52280/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/MonsieurNam" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                <a href="https://scholar.google.com/citations?hl=vi&view_op=list_works&authuser=1&gmla=AGd7smGhO4_ig17xTeNHSi5IDQF2ZSSPaYaTQ-uhk9fdizXG8d1b1Ugqg_dV78whcWAdtynstR6vmNWKWZp6YKeMJSf9zAXLeuvNY5_b3upes3Ics-dQSynCQg&user=OtccK6UAAAAJ" target="_blank" aria-label="Google Scholar"><i class="fas fa-graduation-cap"></i></a>
-                 <a href="mailto:namnguyenfnw@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Navbar -->
+    <nav class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <span class="text-xl font-bold gradient-text">N.N.N.N</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="#education" class="text-gray-700 hover:text-indigo-600 transition">Education</a>
+                    <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition">Experience</a>
+                    <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition">Projects</a>
+                    <a href="#research" class="text-gray-700 hover:text-indigo-600 transition">Research</a>
+                    <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menuBtn" class="text-gray-700 hover:text-indigo-600">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
             </div>
-        </header>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white py-2 px-4 shadow-lg">
+            <div class="flex flex-col space-y-3">
+                <a href="#about" class="text-gray-700 hover:text-indigo-600 transition py-1">About</a>
+                <a href="#education" class="text-gray-700 hover:text-indigo-600 transition py-1">Education</a>
+                <a href="#experience" class="text-gray-700 hover:text-indigo-600 transition py-1">Experience</a>
+                <a href="#projects" class="text-gray-700 hover:text-indigo-600 transition py-1">Projects</a>
+                <a href="#research" class="text-gray-700 hover:text-indigo-600 transition py-1">Research</a>
+                <a href="#contact" class="text-gray-700 hover:text-indigo-600 transition py-1">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-        <!-- === SKILLS SECTION === -->
-        <section id="skills" class="card">
-            <h2><i class="fas fa-laptop-code icon"></i> Skills & Tech Stack</h2>
-            <div class="skills-grid">
-                <div>
-                    <h3><i class="fas fa-code icon-small"></i> Programming & AI/ML</h3>
-                    <ul>
-                        <li>Python</li>
-                        <li>PyTorch</li>
-                        <li>TensorFlow</li>
-                        <li>Scikit-learn</li>
-                        <li>OpenCV</li>
-                        <li>Deep Learning</li>
-                        <li>Machine Learning</li>
-                        <li>Computer Vision</li>
-                        <li>NLP (LangChain, Groq)</li>
-                    </ul>
+    <!-- Hero Section -->
+    <section id="about" class="py-20 bg-gradient-to-r from-indigo-50 to-purple-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-section delay-100">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Hi, I'm <span class="gradient-text">Nguyen Ngo Nhat Nam</span></h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-700 mb-6">AI Researcher & Robotics Engineer</h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Bachelor's student in Artificial Intelligence at FPT University Can Tho, with expertise in 
+                        machine learning, computer vision, and autonomous systems. Passionate about building 
+                        intelligent solutions that bridge the gap between AI research and real-world applications.
+                    </p>
+                    <div class="flex flex-wrap gap-4 mb-8">
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
+                            <span class="text-gray-600">Currently studying at FPT University</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-2 h-2 bg-yellow-500 rounded-full mr-2"></div>
+                            <span class="text-gray-600">Open to research collaborations</span>
+                        </div>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-3 rounded-lg transition flex items-center">
+                            <i class="fas fa-paper-plane mr-2"></i> Contact Me
+                        </a>
+                        <a href="#projects" class="border border-gray-300 hover:bg-gray-100 text-gray-700 px-6 py-3 rounded-lg transition flex items-center">
+                            <i class="fas fa-code mr-2"></i> View Projects
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center animate-section delay-200">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-xl">
+                            <img src="img/me.jpg" alt="Profile Image" class="w-full h-full object-cover" />
+                          </div>
+                        <div class="absolute -right-2 -bottom-2 bg-white p-3 rounded-full shadow-lg">
+                            <div class="bg-indigo-600 text-white rounded-full p-3">
+                                <i class="fas fa-robot text-xl"></i>
+                            </div>
+                        </div>
+                        <div class="absolute -left-4 -top-2 bg-white p-2 rounded-lg shadow-md flex items-center">
+                            <div class="bg-yellow-100 text-yellow-800 p-2 rounded mr-2">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <span class="text-sm font-medium">GPA: 8.6</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">My <span class="gradient-text">Education</span></h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-8 shadow-sm animate-section delay-100">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">FPT University Can Tho</h3>
+                        <p class="text-gray-600">Bachelor of Artificial Intelligence</p>
+                    </div>
+                    <div class="mt-2 md:mt-0">
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">October 2023 - Present</span>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="text-gray-700"><span class="font-semibold">GPA:</span> 8.6/10 | Expected Graduation: 2026</p>
+                    <p class="text-gray-700"><span class="font-semibold">Achievements:</span> Good and Excellent Student of the Semester (Fall 2023 – Fall 2024)</p>
                 </div>
                 <div>
-                    <h3><i class="fas fa-cogs icon-small"></i> Tools & Platforms</h3>
-                    <ul>
-                        <li>Flask</li>
-                        <li>SQL (Basic)</li>
-                        <li>Jetson Nano</li>
-                        <li>Robotics Fundamentals</li>
-                        <li>Git / GitHub</li>
-                        <li>Google Colab</li>
-                        <li>IBM Watson</li>
-                         <!-- Add Docker if applicable -->
-                    </ul>
-                </div>
-                 <div>
-                    <h3><i class="fas fa-language icon-small"></i> Languages</h3>
-                    <ul>
-                        <li>Vietnamese (Native)</li>
-                        <li>English (Fluent)</li>
-                    </ul>
-                </div>
-                <div>
-                    <h3><i class="fas fa-search icon-small"></i> Research Interests</h3>
-                    <ul>
-                        <li>Robotics</li>
-                        <li>AI Research</li>
-                        <li>Autonomous Systems</li>
-                        <li>Data Science</li>
-                    </ul>
+                    <h4 class="font-semibold mb-2 text-gray-800">Relevant Coursework</h4>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Machine Learning</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Deep Learning</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Computer Vision</span>
+                        <span class="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm">Robotics</span>
+                    </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- === PROJECTS SECTION === -->
-        <section id="projects" class="card">
-             <h2><i class="fas fa-project-diagram icon"></i> Projects</h2>
-
-            <div class="project-item">
-                <h3><a href="https://github.com/MonsieurNam/DeepMirror" target="_blank">Deepfake Detection and Generation Web Application (DeepMirror)</a> <span class="date">2024</span></h3>
-                <p class="project-tech">Python, Flask, Deep Learning (PyTorch/TensorFlow), OpenCV</p>
-                <ul>
-                    <li>Built a web app for detecting (video/webcam) and generating (face swapping) deepfakes.</li>
-                    <li>Features: Real-time detection, video analysis, image generation.</li>
-                </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <div class="section-divider"></div>
             </div>
-
-            <div class="project-item">
-                <h3><a href="https://github.com/MonsieurNam/ChatViewWithPDFVietNamese" target="_blank">PDF Chat & View Assistant (Optimized for Vietnamese)</a> <span class="date">2024</span></h3>
-                 <p class="project-tech">Python, LangChain, Groq LLM, BM25 Retrieval, Streamlit/Flask</p>
-                 <ul>
-                    <li>Developed an app to view PDFs and chat interactively with their content in Vietnamese.</li>
-                    <li>Utilized LangChain, Groq LLM, and BM25 for semantic search and contextual responses.</li>
-                    <li>Features: PDF Parsing, AI Chat, Customizable Prompts.</li>
-                 </ul>
+            
+            <div class="space-y-8">
+                <!-- Experience 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm animate-section delay-100">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Vietnam Robotic Challenge (VORC)</h3>
+                            <p class="text-gray-600">Mentor and Advisor</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">2023 – 2024</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Led and mentored teams in preparation for robotics competitions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Provided expertise in robot design, implementation, and AI-based applications</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Offered continuous technical support throughout the competition process</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Experience 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm animate-section delay-200">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-gray-800">Autonomous Car Competition</h3>
+                            <p class="text-gray-600">Advisor and Member of Organizing Committee</p>
+                        </div>
+                        <div class="mt-2 md:mt-0">
+                            <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm">2024</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Coordinated and facilitated the autonomous vehicle competition at FPT University</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Worked with teams to ensure the efficient execution of the event</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-indigo-500 mr-2 mt-1"></i>
+                            <span>Provided technical mentorship on self-driving car technologies and AI applications</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
+        </div>
+    </section>
 
-             <div class="project-item">
-                <h3><a href="https://github.com/MonsieurNam/Simple_Chatbot_Support_Student_with_IBM" target="_blank">Chatbot Support for School</a> <span class="date">2024</span></h3>
-                <p class="project-tech">Python, Flask, IBM Watson API, NLP</p>
-                 <ul>
-                     <li>Developed a Flask chatbot to streamline school communications.</li>
-                     <li>Integrated IBM Watson for NLU and interaction with PDF documents.</li>
-                 </ul>
+    <!-- Projects Section -->
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Selected projects demonstrating my technical skills and creativity</p>
+                <div class="section-divider"></div>
             </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden hover:border-indigo-500 border-2 border-transparent transition-all duration-300 animate-section delay-100">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <img src="img\jetracer.jpg" alt="jetracer Image" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Jet-Racer: Deep Learning Autonomous Car</h3>
+                            <a href="https://github.com/MonsieurNam/Jet-Racer" target="_blank" class="text-indigo-600 hover:text-indigo-800 ml-2">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mb-4">Developed a deep learning model for autonomous car navigation using TensorFlow and Python</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Python</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">TensorFlow</span>
+                            <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Robotics</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden hover:border-indigo-500 border-2 border-transparent transition-all duration-300 animate-section delay-200">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <img src="img/pixelplane.png" alt="pixelplane Image" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">PIXEL PLANE</h3>
+                            <a href="https://github.com/MonsieurNam/PIXEL_PLANE" target="_blank" class="text-indigo-600 hover:text-indigo-800 ml-2">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mb-4">Web-based application for augmenting data to train autonomous vehicles</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Web App</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Computer Vision</span>
+                            <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded-full text-xs">Data Augmentation</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden hover:border-indigo-500 border-2 border-transparent transition-all duration-300 animate-section delay-300">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-teal-600 flex items-center justify-center">
+                        <img src="img/deepmirror.png" alt="deepmirror Image" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">Deepfake Detection and Generation Web App</h3>
+                            <a href="https://github.com/MonsieurNam/DeepMirror" target="_blank" class="text-indigo-600 hover:text-indigo-800 ml-2">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mb-4">Flask web application for detecting and generating deepfakes using deep learning models</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Flask</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Deep Learning</span>
+                            <span class="px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">Computer Vision</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="project-card bg-gray-50 rounded-xl shadow-md overflow-hidden hover:border-indigo-500 border-2 border-transparent transition-all duration-300 animate-section delay-400">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <img src="img/pdfviewachatbot.png" alt="pdfviewachatbot Image" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold mb-2">PDF Chat & View Assistant (Vietnamese)</h3>
+                            <a href="https://github.com/MonsieurNam/ChatViewWithPDFVietNamese" target="_blank" class="text-indigo-600 hover:text-indigo-800 ml-2">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                        </div>
+                        <p class="text-gray-600 mb-4">Interactive chatbot for Vietnamese PDF content using LangChain, Groq's LLM, and BM25 Retrieval</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">NLP</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">LangChain</span>
+                            <span class="px-2 py-1 bg-orange-100 text-orange-800 rounded-full text-xs">LLM</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center animate-section delay-500">
+                <a href="https://github.com/MonsieurNam" target="_blank" class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 transition">
+                    View all projects on GitHub <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <div class="project-item">
-                <h3><a href="https://github.com/MonsieurNam/PIXEL_PLANE" target="_blank">PIXEL PLANE (Web-based Data Augmentation Tool)</a> <span class="date">2023</span></h3>
-                <p class="project-tech">Python, OpenCV, Web Framework(Streamlit)</p>
-                <ul>
-                    <li>Designed a web app to augment image data for autonomous vehicle model training.</li>
-                    <li>Implemented computer vision techniques to generate synthetic datasets.</li>
-                </ul>
+    <!-- Research Section -->
+    <section id="research" class="py-16 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Research <span class="gradient-text">Publications</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">My contributions to academic research in AI and computer vision</p>
+                <div class="section-divider"></div>
             </div>
+            
+            <div class="space-y-8">
+                <!-- Research 1 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm animate-section delay-100">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            <a href="https://www.sciencedirect.com/science/article/pii/S2215098625000837" target="_blank" class="hover:text-indigo-600">
+                                Grounding DINO and Distillation-Enhanced Model for Traffic Sign Detection
+                            </a>
+                        </h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm md:mt-0 mt-2">2024</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Developed a high-performance, lightweight traffic sign detection model utilizing self-distillation on ResNet34.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Computer Vision</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Object Detection</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Self-Distillation</span>
+                    </div>
+                </div>
+                
+                <!-- Research 2 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm animate-section delay-200">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            <a href="https://link.springer.com/article/10.1007/s11760-024-03779-w" target="_blank" class="hover:text-indigo-600">
+                                Enhancing Semantic Scene Segmentation for Indoor Autonomous Systems Using Advanced Attention-Supported Improved UNet
+                            </a>
+                        </h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm md:mt-0 mt-2">2024</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Improved semantic segmentation architecture for indoor autonomous vision systems with attention mechanisms.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Semantic Segmentation</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">UNet</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Attention Mechanisms</span>
+                    </div>
+                </div>
+                
+                <!-- Research 3 -->
+                <div class="bg-white rounded-xl p-8 shadow-sm animate-section delay-300">
+                    <div class="flex flex-col md:flex-row justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">
+                            <a href="https://link.springer.com/article/10.1007/s11042-024-19302-9" target="_blank" class="hover:text-indigo-600">
+                                Semantic Scene Segmentation for Indoor Autonomous Vision Systems: Leveraging an Enhanced and Efficient U-Net Architecture
+                            </a>
+                        </h3>
+                        <span class="bg-indigo-100 text-indigo-800 px-3 py-1 rounded-full text-sm md:mt-0 mt-2">2024</span>
+                    </div>
+                    <p class="text-gray-700 mb-4">
+                        Efficient U-Net variant optimized for real-time scene segmentation in autonomous systems.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Real-time Processing</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Computer Vision</span>
+                        <span class="px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">Autonomous Systems</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <div class="project-item">
-                <h3><a href="https://github.com/MonsieurNam/Jet-Racer" target="_blank">Jet-Racer: Deep Learning Autonomous Car</a> <span class="date">2022</span></h3>
-                 <p class="project-tech">Python, TensorFlow, Jetson Nano, Computer Vision</p>
-                <ul>
-                    <li>Developed and trained a TensorFlow model for autonomous car navigation on Jetson Nano.</li>
-                    <li>Optimized for real-time performance in various environments.</li>
-                </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Technical <span class="gradient-text">Skills</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Technologies and tools I work with regularly</p>
+                <div class="section-divider"></div>
             </div>
-        </section>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Programming -->
+                <div class="animate-section delay-100">
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg mb-4">
+                            <i class="fas fa-code text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Programming</h3>
+                        <div class="space-y-3">
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="w-5 h-5 mr-3" alt="Python" />
+                                <span>Python</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <i class="fab fa-js text-yellow-500 mr-3"></i>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <i class="fas fa-database text-blue-500 mr-3"></i>
+                                <span>SQL</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="animate-section delay-200">
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg mb-4">
+                            <i class="fas fa-brain text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">AI/ML</h3>
+                        <div class="space-y-3">
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" class="w-5 h-5 mr-3" alt="PyTorch" />
+                                <span>PyTorch</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" class="w-5 h-5 mr-3" alt="TensorFlow" />
+                                <span>TensorFlow</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <i class="fas fa-network-wired text-purple-500 mr-3"></i>
+                                <span>LangChain</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Computer Vision -->
+                <div class="animate-section delay-300">
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg mb-4">
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Computer Vision</h3>
+                        <div class="space-y-3">
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" class="w-5 h-5 mr-3" alt="OpenCV" />
+                                <span>OpenCV</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <i class="fas fa-object-group text-blue-500 mr-3"></i>
+                                <span>Segmentation</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <i class="fas fa-search text-green-500 mr-3"></i>
+                                <span>Object Detection</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools -->
+                <div class="animate-section delay-400">
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <div class="flex items-center justify-center w-14 h-14 bg-indigo-100 text-indigo-600 rounded-lg mb-4">
+                            <i class="fas fa-tools text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold mb-4">Tools & Platforms</h3>
+                        <div class="space-y-3">
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" class="w-5 h-5 mr-3" alt="Flask" />
+                                <span>Flask</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" class="w-5 h-5 mr-3" alt="Google Cloud" />
+                                <span>Google Colab</span>
+                            </div>
+                            <div class="skill-badge px-4 py-2 bg-gray-100 hover:bg-indigo-50 rounded-lg flex items-center">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nvidia/nvidia-original.svg" class="w-5 h-5 mr-3" alt="NVIDIA" />
+                                <span>Jetson Nano</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Languages -->
+            <div class="mt-12 bg-gray-50 p-8 rounded-xl shadow-sm animate-section delay-500">
+                <h3 class="text-xl font-bold mb-6 text-center">Languages</h3>
+                <div class="flex justify-center space-x-12">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-globe-americas text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">Vietnamese</h4>
+                        <p class="text-gray-600 text-sm">Native</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full flex items-center justify-center mx-auto mb-2">
+                            <i class="fas fa-language text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold">English</h4>
+                        <p class="text-gray-600 text-sm">Fluent</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Research Interests -->
+            <div class="mt-8 bg-indigo-50 p-6 rounded-xl border border-indigo-100 animate-section delay-500">
+                <h3 class="text-xl font-bold mb-4 text-center">Research Interests</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="px-4 py-2 bg-white text-indigo-700 rounded-full border border-indigo-200">Robotics</span>
+                    <span class="px-4 py-2 bg-white text-indigo-700 rounded-full border border-indigo-200">AI Research</span>
+                    <span class="px-4 py-2 bg-white text-indigo-700 rounded-full border border-indigo-200">Autonomous Systems</span>
+                    <span class="px-4 py-2 bg-white text-indigo-700 rounded-full border border-indigo-200">Machine Learning</span>
+                    <span class="px-4 py-2 bg-white text-indigo-700 rounded-full border border-indigo-200">Data Science</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <!-- === RESEARCH SECTION === -->
-        <section id="research" class="card">
-            <h2><i class="fas fa-flask icon"></i> Research Experience</h2>
-            <div class="research-item">
-                 <h3><a href="https://www.sciencedirect.com/science/article/pii/S2215098625000837" target="_blank">Grounding DINO and Distillation-Enhanced Model for Traffic Sign Detection</a> <span class="date">2024</span></h3>
-                 <p>Developed a lightweight, high-performance traffic sign detector using self-distillation (ResNet34) and Grounding DINO for open-set capabilities on edge devices. Published in Engineering Science and Technology, an International Journal.</p>
-                 <!-- Optional: <p><a href="link-to-code-if-available">[Code]</a></p> -->
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-gradient-to-br from-indigo-500 to-purple-600 text-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <p class="text-indigo-100 max-w-2xl mx-auto">I'm always open to discussing research, projects, or opportunities</p>
+                <div class="section-divider"></div>
             </div>
-             <div class="research-item">
-                 <h3><a href="https://link.springer.com/article/10.1007/s11760-024-03779-w" target="_blank">Enhancing Semantic Scene Segmentation for Indoor Autonomous Systems Using Advanced Attention-Supported Improved UNet</a> <span class="date">2024</span></h3>
-                 <p>Improved indoor semantic segmentation using an enhanced U-Net architecture with advanced attention mechanisms. Published in Signal, Image and Video Processing.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="animate-section delay-100">
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-white mb-1">Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 bg-indigo-400 bg-opacity-20 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent placeholder-indigo-200" placeholder="Your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-white mb-1">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 bg-indigo-400 bg-opacity-20 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent placeholder-indigo-200" placeholder="your@email.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-white mb-1">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 bg-indigo-400 bg-opacity-20 border border-indigo-300 rounded-lg focus:ring-2 focus:ring-white focus:border-transparent placeholder-indigo-200" placeholder="What would you like to discuss?"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-white text-indigo-600 px-6 py-3 rounded-lg hover:bg-indigo-50 transition flex items-center justify-center font-medium">
+                                <i class="fas fa-paper-plane mr-2"></i> Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="animate-section delay-200">
+                    <div class="bg-white bg-opacity-10 p-8 rounded-xl h-full backdrop-blur-sm">
+                        <h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+                        <div class="space-y-5">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white text-indigo-600 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <a href="mailto:namnguyenfnw@gmail.com" class="text-indigo-200 hover:text-white transition">namnguyenfnw@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white text-indigo-600 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">LinkedIn</h4>
+                                    <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-nam-893b52280/" target="_blank" class="text-indigo-200 hover:text-white transition">linkedin.com/in/nguyễn-nam</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white text-indigo-600 p-3 rounded-lg mr-4">
+                                    <i class="fab fa-github"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">GitHub</h4>
+                                    <a href="https://github.com/MonsieurNam" target="_blank" class="text-indigo-200 hover:text-white transition">github.com/MonsieurNam</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white text-indigo-600 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Google Scholar</h4>
+                                    <a href="https://scholar.google.com/citations?hl=vi&view_op=list_works&authuser=1&gmla=AGd7smGhO4_ig17xTeNHSi5IDQF2ZSSPaYaTQ-uhk9fdizXG8d1b1Ugqg_dV78whcWAdtynstR6vmNWKWZp6YKeMJSf9zAXLeuvNY5_b3upes3Ics-dQSynCQg&user=OtccK6UAAAAJ" target="_blank" class="text-indigo-200 hover:text-white transition">Nguyen Ngo Nhat Nam</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-white text-indigo-600 p-3 rounded-lg mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p>FPT University Can Tho, Vietnam</p>
+                                    <p class="text-sm text-indigo-200">Open for remote collaborations</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-             <div class="research-item">
-                 <h3><a href="https://link.springer.com/article/10.1007/s11042-024-19302-9" target="_blank">Semantic Scene Segmentation for Indoor Autonomous Vision Systems: Leveraging an Enhanced and Efficient U-Net Architecture</a> <span class="date">2024</span></h3>
-                 <p>Developed an efficient and enhanced U-Net architecture for semantic scene segmentation targeting indoor autonomous vision systems. Published in Multimedia Tools and Applications.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- === EXPERIENCE SECTION === -->
-        <section id="experience" class="card">
-            <h2><i class="fas fa-briefcase icon"></i> Experience</h2>
-            <div class="experience-item">
-                <h3>Mentor and Advisor - Vietnam Robotic Challenge (VORC)</h3>
-                <p class="dates">2023 – 2024</p>
-                <ul>
-                    <li>Led and mentored FPT University teams for the VORC competition.</li>
-                    <li>Provided technical expertise in robot design, control algorithms, and AI integration.</li>
-                    <li>Offered continuous troubleshooting and strategic guidance throughout the competition.</li>
-                </ul>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <h2 class="text-2xl font-bold gradient-text">Nguyen Ngo Nhat Nam</h2>
+                    <p class="text-gray-400 mt-2">AI Researcher & Robotics Engineer</p>
+                </div>
+                
+                <div class="flex flex-col items-center md:items-end">
+                    <div class="flex space-x-6 mb-4">
+                        <a href="mailto:namnguyenfnw@gmail.com" class="text-gray-400 hover:text-white transition">
+                            <i class="fas fa-envelope text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-nam-893b52280/" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in text-xl"></i>
+                        </a>
+                        <a href="https://github.com/MonsieurNam" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                        <a href="https://scholar.google.com/citations?hl=vi&view_op=list_works&authuser=1&gmla=AGd7smGhO4_ig17xTeNHSi5IDQF2ZSSPaYaTQ-uhk9fdizXG8d1b1Ugqg_dV78whcWAdtynstR6vmNWKWZp6YKeMJSf9zAXLeuvNY5_b3upes3Ics-dQSynCQg&user=OtccK6UAAAAJ" target="_blank" class="text-gray-400 hover:text-white transition">
+                            <i class="fas fa-graduation-cap text-xl"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">© 2024 Nguyen Ngo Nhat Nam. All rights reserved.</p>
+                </div>
             </div>
-            <div class="experience-item">
-                 <h3>Advisor and Organizing Committee Member - Autonomous Car Competition</h3>
-                 <p class="dates">2024 | FPT University Can Tho</p>
-                 <ul>
-                    <li>Co-organized the 2024 Autonomous Car Competition, managing logistics and technical aspects.</li>
-                    <li>Provided technical mentorship on self-driving car technologies (CV, path planning).</li>
-                     <li>Facilitated smooth event execution and technical support for competitors.</li>
-                 </ul>
-            </div>
-        </section>
-
-        <!-- === EDUCATION SECTION === -->
-        <section id="education" class="card">
-             <h2><i class="fas fa-user-graduate icon"></i> Education</h2>
-             <div class="education-item">
-                 <h3>FPT University Can Tho</h3>
-                 <p>Bachelor of Artificial Intelligence <span class="date">Oct 2023 – Expected 2026</span></p>
-                 <p>GPA: 8.6/10</p>
-                 <p><em>Awards:</em> Good/Excellent Student (Fall 2023 – Fall 2024)</p>
-                 <p><em>Relevant Coursework:</em> Machine Learning, Deep Learning, Computer Vision, Robotics</p>
-             </div>
-        </section>
-
-        <!-- === CONTACT SECTION === -->
-        <section id="contact" class="card">
-            <h2><i class="fas fa-paper-plane icon"></i> Get In Touch</h2>
-            <p>Interested in collaborating or have a question? Feel free to reach out!</p>
-            <div class="contact-details">
-                <p><i class="fas fa-envelope icon-small"></i> <a href="mailto:namnguyenfnw@gmail.com">namnguyenfnw@gmail.com</a></p>
-                <p><i class="fas fa-phone icon-small"></i> +84 325235826</p>
-                <p><i class="fab fa-linkedin icon-small"></i> <a href="https://www.linkedin.com/in/nguy%E1%BB%85n-nam-893b52280/" target="_blank">LinkedIn Profile</a></p>
-                <p><i class="fab fa-github icon-small"></i> <a href="https://github.com/MonsieurNam" target="_blank">GitHub Profile</a></p>
-                <p><i class="fab fa-facebook icon-small"></i> <a href="https://www.facebook.com/nam.nguyen.138612" target="_blank">Facebook Profile</a></p>
-                <p><i class="fas fa-map-marker-alt icon-small"></i> FPT University Can Tho, Vietnam</p>
-            </div>
-        </section>
-
-
-        <!-- === FOOTER === -->
-        <footer>
-            <p>© <span id="year"></span> Nguyen Ngo Nhat Nam. All rights reserved.</p>
-        </footer>
-    </div>
+        </div>
+    </footer>
 
     <script>
-        // Script nhỏ để tự động cập nhật năm ở footer
-        document.getElementById('year').textContent = new Date().getFullYear();
+        // Mobile menu toggle
+        document.getElementById('menuBtn').addEventListener('click', function() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+            });
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Add animation classes as elements come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-section');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
     </script>
 </body>
 </html>
