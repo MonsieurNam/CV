@@ -21,7 +21,7 @@ export function TestimonialSection() {
         const rect = el.getBoundingClientRect();
         const vh = window.innerHeight;
         const progress = 1 - (rect.top + rect.height / 2) / (vh + rect.height / 2);
-        const o = Math.max(-200, Math.min(200, (progress - 0.5) * 400));
+        const o = Math.max(-48, Math.min(48, (progress - 0.5) * 120));
         setOffset(o);
       });
     };
@@ -48,7 +48,7 @@ export function TestimonialSection() {
           className={`${stage(0.2).className} mt-4 text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] tracking-tight`}
           style={{ ...stage(0.2).style, color: "#0D212C" }}
         >
-          'I write models that <span className="font-serif-display">fit on the edge</span> — not just papers on a shelf.'
+          I write models that <span className="font-serif-display">fit on the edge</span> - not just papers on a shelf.
         </h2>
         <p {...stage(0.3)} className={`${stage(0.3).className} italic text-sm mt-6`} style={{ ...stage(0.3).style, color: "#273C46" }}>
           Nguyen Ngo Nhat Nam

@@ -14,13 +14,6 @@
   font-weight: 500;
   font-display: swap;
 }
-@font-face {
-  font-family: 'PP Mondwest';
-  src: url('/PPMondwest-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #051A24;
@@ -34,7 +27,8 @@ html, body {
 }
 
 .font-serif-display {
-  font-family: 'PP Mondwest', 'PP Neue Montreal', serif;
+  font-family: 'PP Neue Montreal', Georgia, serif;
+  letter-spacing: -0.04em;
 }
 
 @keyframes fadeInUp {

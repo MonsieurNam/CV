@@ -13,14 +13,14 @@ import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import "./styles.css";
 
 const MARQUEE_IMAGES = [
-  "/img/pixelplane.png",
-  "/img/deepmirror.png",
-  "/img/jetracer.jpg",
-  "/img/pdfviewachatbot.png",
-  "/img/me.jpg",
-  "https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif",
-  "https://motionsites.ai/assets/hero-portfolio-cosmic-preview-BpvWJ3Nc.gif",
-  "https://motionsites.ai/assets/hero-transform-data-preview-Cx5OU29N.gif",
+  "/img/giai-nhat-AIchallegePTIT.jpg",
+  "/img/jetsoncar.jpg",
+  "/img/autorace.jpg",
+  "/img/vorc.jpg",
+  "/img/mentor_autorace2024.jpg",
+  "/img/nguoi-tre-voi-nckh-enh-seg.jpg",
+  "/img/Nguoi-tre-voi-nckh-seg.jpg",
+  "/img/teamlead.jpg",
 ];
 
 function Hero() {
@@ -31,58 +31,76 @@ function Hero() {
   });
 
   return (
-    <section ref={ref} className="max-w-[440px] mx-auto px-6 pt-12 md:pt-16">
-      <h1
-        {...stage(0.1)}
-        className={`${stage(0.1).className} font-serif-display text-[32px] md:text-[40px] lg:text-[44px] font-semibold tracking-tight mb-4`}
-        style={{ ...stage(0.1).style, color: "#051A24" }}
-      >
-        Nguyen Ngo Nhat Nam
-      </h1>
-      <p
-        {...stage(0.2)}
-        className={`${stage(0.2).className} font-mono text-xs md:text-sm mb-2`}
-        style={{ ...stage(0.2).style, color: "#051A24" }}
-      >
-        AI Researcher · Autonomous Systems
-      </p>
-      <h2
-        {...stage(0.3)}
-        className={`${stage(0.3).className} text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] tracking-tight`}
-        style={{ ...stage(0.3).style, color: "#0D212C" }}
-      >
-        Build the <span className="font-serif-display">edge of vision,</span>
-        <br />
-        the <span className="font-serif-display">efficient way.</span>
-      </h2>
+    <section ref={ref} className="relative max-w-[1120px] mx-auto px-6 pt-12 md:pt-16 overflow-hidden">
+      <div className="pointer-events-none absolute inset-x-6 top-6 bottom-0 rounded-[48px] bg-[radial-gradient(circle_at_18%_20%,rgba(5,26,36,0.08),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(25,118,210,0.10),transparent_24%),linear-gradient(180deg,rgba(246,252,255,0.94),rgba(255,255,255,0))]" />
       <div
-        {...stage(0.4)}
-        className={`${stage(0.4).className} flex flex-col gap-6 text-sm md:text-base leading-relaxed mt-5 md:mt-6`}
-        style={{ ...stage(0.4).style, color: "#051A24" }}
+        className={`${stage(0.15).className} pointer-events-none absolute right-8 md:right-16 top-28 hidden md:grid grid-cols-2 gap-3`}
+        style={stage(0.15).style}
       >
-        <p>
-          I am an AI undergraduate at FPT University Can Tho (GPA 8.77/10) with
-          three peer-reviewed papers in Springer and Elsevier on Computer Vision
-          and Autonomous Systems.
-        </p>
-        <p>
-          My focus is delivering lightweight, high-performance models for edge
-          devices, from VLM fine-tuning at 0.17 GB peak VRAM to traffic-sign
-          detection for ADAS and autonomous driving.
-        </p>
-        <p>Open to Intern / Fresher AI R&amp;D Engineer roles.</p>
+        {["AI perception", "ADAS", "Edge VLM", "Autonomous car"].map((item) => (
+          <span
+            key={item}
+            className="rounded-full bg-white/80 px-4 py-2 text-xs shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
+            style={{ color: "#051A24" }}
+          >
+            {item}
+          </span>
+        ))}
       </div>
-      <div
-        {...stage(0.5)}
-        className={`${stage(0.5).className} flex flex-col sm:flex-row gap-3 md:gap-4 mt-5 md:mt-6`}
-        style={stage(0.5).style}
-      >
-        <Button href="mailto:namnguyenfnw@gmail.com" variant="primary">
-          Get in touch
-        </Button>
-        <Button href="#work" variant="secondary">
-          View research
-        </Button>
+
+      <div className="relative z-10 max-w-[720px] mx-auto text-center">
+        <h1
+          {...stage(0.1)}
+          className={`${stage(0.1).className} font-serif-display font-semibold tracking-tight mb-4 whitespace-nowrap`}
+          style={{ ...stage(0.1).style, color: "#051A24", fontSize: "clamp(26px, 7vw, 72px)" }}
+        >
+          Nguyen Ngo Nhat Nam
+        </h1>
+        <p
+          {...stage(0.2)}
+          className={`${stage(0.2).className} font-mono text-xs md:text-sm mb-2`}
+          style={{ ...stage(0.2).style, color: "#051A24" }}
+        >
+          AI Researcher · Autonomous Systems
+        </p>
+        <h2
+          {...stage(0.3)}
+          className={`${stage(0.3).className} text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] tracking-tight`}
+          style={{ ...stage(0.3).style, color: "#0D212C" }}
+        >
+          Build the <span className="font-serif-display">edge of vision,</span>
+          <br />
+          the <span className="font-serif-display">efficient way.</span>
+        </h2>
+        <div
+          {...stage(0.4)}
+          className={`${stage(0.4).className} flex flex-col gap-6 text-sm md:text-base leading-relaxed mt-5 md:mt-6`}
+          style={{ ...stage(0.4).style, color: "#051A24" }}
+        >
+          <p>
+            I am an AI undergraduate at FPT University Can Tho (GPA 8.77/10)
+            with three peer-reviewed papers in Springer and Elsevier on
+            Computer Vision and Autonomous Systems.
+          </p>
+          <p>
+            My focus is delivering lightweight, high-performance models for
+            edge devices, from VLM fine-tuning at 0.17 GB peak VRAM to
+            traffic-sign detection for ADAS and autonomous driving.
+          </p>
+          <p>Open to Intern / Fresher AI R&amp;D Engineer roles.</p>
+        </div>
+        <div
+          {...stage(0.5)}
+          className={`${stage(0.5).className} flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mt-5 md:mt-6`}
+          style={stage(0.5).style}
+        >
+          <Button href="mailto:namnguyenfnw@gmail.com" variant="primary">
+            Get in touch
+          </Button>
+          <Button href="#work" variant="secondary">
+            View research
+          </Button>
+        </div>
       </div>
     </section>
   );
@@ -98,8 +116,8 @@ function Marquee() {
             key={`${src}-${index}`}
             src={src}
             alt=""
-            className="h-[280px] md:h-[500px] mx-3 rounded-2xl shadow-lg object-cover"
-            style={{ minWidth: 280 }}
+            className="h-[240px] md:h-[420px] mx-3 rounded-2xl shadow-lg object-cover"
+            style={{ minWidth: 320 }}
           />
         ))}
       </div>
