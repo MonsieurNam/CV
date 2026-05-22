@@ -44,7 +44,7 @@ export function PricingSection() {
               <div className="text-sm text-[#051A24]/70 mt-1">Can Tho, Vietnam · Open to remote</div>
             </div>
             <div className="mt-8 flex justify-center">
-              <Button href="mailto:namnguyenfnw@gmail.com" variant="tertiary">Start a chat</Button>
+              <Button href="https://zalo.me/0325235826" target="_blank" rel="noreferrer" variant="tertiary">Start a chat</Button>
             </div>
           </div>
         </div>

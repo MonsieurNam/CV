@@ -7,7 +7,7 @@ export function BottomNav() {
       style={{ boxShadow: "0 0 0 0.5px rgba(0,0,0,0.05), 0 10px 40px rgba(0,0,0,0.12), inset 0 1px 2px rgba(255,255,255,0.6)" }}
     >
       <span className="font-serif-display text-2xl font-semibold" style={{ color: "#051A24" }}>N</span>
-      <Button href="mailto:namnguyenfnw@gmail.com" variant="primary">Start a chat</Button>
+      <Button href="https://zalo.me/0325235826" target="_blank" rel="noreferrer" variant="primary">Start a chat</Button>
     </div>
   );
 }

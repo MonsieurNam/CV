@@ -17,9 +17,9 @@ const PROJECTS = [
     year: "2025",
   },
   {
-    name: "Traffic Sign Detection",
-    desc: "Lightweight detector using Self-Distillation on ResNet34 with Grounding DINO for open-set detection on edge devices. Published in ScienceDirect / Elsevier.",
-    img: "/img/jetsoncar.jpg",
+    name: "Semantic-Guided Traffic Sign Detection",
+    desc: "GroundingDINO + lightweight LB-scSE self-distilled ResNet for small and occluded traffic signs. Achieves 68.52% mAP@50 on DINO&GTSRBv1 while reducing model size by 10x for real-time autonomous-driving deployment.",
+    img: "/img/gdino_tfsign.png",
     url: "https://www.sciencedirect.com/science/article/pii/S2215098625000837",
     year: "2025",
   },

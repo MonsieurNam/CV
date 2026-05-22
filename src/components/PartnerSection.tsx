@@ -103,7 +103,13 @@ export function PartnerSection() {
           >
             Move your cursor here to reveal moments from AI research, mentoring, robotics, and autonomous-car work.
           </p>
-          <Button href="mailto:namnguyenfnw@gmail.com" variant="primary" className={`${inView ? "animate-fade-in-up" : "opacity-0"} !pl-2`}>
+          <Button
+            href="https://zalo.me/0325235826"
+            target="_blank"
+            rel="noreferrer"
+            variant="primary"
+            className={`${inView ? "animate-fade-in-up" : "opacity-0"} !pl-2`}
+          >
             <img
               src="/img/me.jpg"
               alt="Nam"

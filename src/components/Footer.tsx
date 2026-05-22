@@ -7,7 +7,7 @@ export function Footer() {
     <footer className="max-w-[1200px] mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row gap-10 md:justify-between">
         <div>
-          <Button href="mailto:namnguyenfnw@gmail.com" variant="primary">Start a chat</Button>
+          <Button href="https://zalo.me/0325235826" target="_blank" rel="noreferrer" variant="primary">Start a chat</Button>
         </div>
         <div className="flex items-start gap-8">
           <ArrowUpRight className="w-6 h-6 mt-1" style={{ color: "#051A24" }} />
