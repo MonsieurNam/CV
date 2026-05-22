@@ -50,7 +50,7 @@ npm run preview -- --host 127.0.0.1 --port 4173
 
 ## Updating Images
 
-When replacing a project image such as `gdino_tfsign.png`, keep the source and static fallback folders synchronized:
+When replacing a project image such as `gdino_tfsign_overview.png`, keep the source and static fallback folders synchronized:
 
 1. Put the image in `public/img/`.
 2. Mirror the same image into `img/`.
@@ -66,14 +66,14 @@ When replacing a project image such as `gdino_tfsign.png`, keep the source and s
 For the current Traffic Sign Detection project, the image is:
 
 ```text
-public/img/gdino_tfsign.png
-img/gdino_tfsign.png
+public/img/gdino_tfsign_overview.png
+img/gdino_tfsign_overview.png
 ```
 
 and the public URL is:
 
 ```text
-/img/gdino_tfsign.png
+/img/gdino_tfsign_overview.png
 ```
 
 ## Deployment
@@ -98,7 +98,7 @@ After a deploy, verify:
 - GitHub Actions `pages build and deployment` completed successfully.
 - `https://nguyennhatnam.id.vn` returns HTTP `200`.
 - The HTML points to the latest `/assets/app-*.js` bundle.
-- Updated image URLs, such as `/img/gdino_tfsign.png`, return HTTP `200`.
+- Updated image URLs, such as `/img/gdino_tfsign_overview.png`, return HTTP `200`.
 - Updated text appears in the public JS bundle.
 - Removed/old text no longer appears in the public JS bundle.
 
