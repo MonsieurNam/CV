@@ -34,12 +34,15 @@ function Hero() {
       ref={ref}
       className="relative min-h-[720px] md:min-h-screen w-full overflow-hidden bg-[#032534] text-white"
     >
-      <img
-        src="/img/jetsoncar.jpg"
-        alt=""
-        className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-screen"
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        src="/img/Person_working_in_flower_field_202605222337.mp4"
+        className="absolute inset-0 h-full w-full object-cover z-0"
       />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(112,197,255,0.35),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(180,255,226,0.18),transparent_28%),linear-gradient(180deg,rgba(3,37,52,0.60),rgba(3,37,52,0.96)_78%,#ffffff_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(112,197,255,0.35),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(180,255,226,0.18),transparent_28%),linear-gradient(180deg,rgba(3,37,52,0.42),rgba(3,37,52,0.92)_78%,#F2F6F9_100%)]" />
       <div className="velvet-orb left-[8%] top-[24%] h-72 w-72" />
       <div className="velvet-orb velvet-orb-delay right-[5%] top-[18%] h-96 w-96" />
       <div className="velvet-orb velvet-orb-slow left-1/2 bottom-[14%] h-80 w-80" />
@@ -157,12 +160,14 @@ function Marquee() {
 
 function App() {
   return (
-    <main className="bg-white min-h-screen overflow-x-hidden pb-32">
+    <main className="bg-[#F2F6F9] min-h-screen overflow-x-hidden pb-32">
       <Hero />
       <Marquee />
       <TestimonialSection />
       <PricingSection />
+      <div className="soft-divider my-10" />
       <TestimonialCarousel />
+      <div className="soft-divider my-10" />
       <ProjectsSection />
       <PartnerSection />
       <Footer />

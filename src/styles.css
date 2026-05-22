@@ -15,15 +15,35 @@
   font-display: swap;
 }
 :root {
-  --background: #ffffff;
+  --background: #F2F6F9;
   --foreground: #051A24;
+  --canvas: #F2F6F9;
+  --surface: #FFFFFF;
+  --surface-muted: #ECF1F5;
+  --hairline: rgba(5, 26, 36, 0.06);
 }
 
 html, body {
-  background: #ffffff;
+  background: var(--canvas);
   color: #051A24;
   font-family: 'PP Neue Montreal', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.section-ambient {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 50% 18%, rgba(112,197,255,0.10), transparent 42%),
+    radial-gradient(circle at 88% 78%, rgba(193,255,220,0.08), transparent 48%);
+}
+
+.soft-divider {
+  height: 1px;
+  width: min(960px, 90%);
+  margin: 0 auto;
+  background: linear-gradient(90deg, transparent, rgba(5,26,36,0.10), transparent);
 }
 
 .font-serif-display {

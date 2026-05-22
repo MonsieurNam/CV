@@ -31,7 +31,7 @@ export function PricingSection() {
           </div>
         </div>
         <div
-          className={`${cls()} bg-white shadow-[0_4px_16px_rgba(0,0,0,0.08)]`}
+          className={`${cls()} bg-white ring-1 ring-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)]`}
           style={{ animationDelay: "0.2s" }}
         >
           <div className="pt-6 text-[#0D212C] max-w-sm mx-auto">

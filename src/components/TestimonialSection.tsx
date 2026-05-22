@@ -40,8 +40,9 @@ export function TestimonialSection() {
   });
 
   return (
-    <section ref={ref} className="w-full py-12 px-6">
-      <div className="max-w-2xl mx-auto flex flex-col items-center text-center">
+    <section ref={ref} className="relative w-full py-12 px-6 overflow-hidden">
+      <div className="section-ambient" />
+      <div className="relative max-w-2xl mx-auto flex flex-col items-center text-center">
         <div {...stage(0.1)}><Quote className="w-6 h-6 text-slate-900" /></div>
         <h2
           {...stage(0.2)}

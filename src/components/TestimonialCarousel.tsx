@@ -48,7 +48,7 @@ export function TestimonialCarousel() {
               href={paper.url}
               target="_blank"
               rel="noreferrer"
-              className={`${inView ? "animate-fade-in-up" : "opacity-0"} group relative overflow-hidden bg-white rounded-[32px] md:rounded-[40px] px-6 md:px-10 py-8 shadow-[0_4px_16px_rgba(0,0,0,0.08)] hover:shadow-[0_8px_24px_rgba(0,0,0,0.12)] transition-shadow`}
+              className={`${inView ? "animate-fade-in-up" : "opacity-0"} group relative overflow-hidden bg-white rounded-[32px] md:rounded-[40px] px-6 md:px-10 py-8 ring-1 ring-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 transition-all duration-300`}
               style={{ animationDelay: `${0.12 + index * 0.08}s` }}
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#E0EBF0] opacity-60 transition-transform group-hover:scale-125" />
