@@ -8,7 +8,6 @@ import { PricingSection } from "@/components/PricingSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TestimonialSection } from "@/components/TestimonialSection";
-import { Button } from "@/components/Button";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import "./styles.css";
 
@@ -25,80 +24,112 @@ const MARQUEE_IMAGES = [
 
 function Hero() {
   const { ref, inView } = useInViewAnimation<HTMLElement>();
-  const stage = (delay: number) => ({
-    className: inView ? "animate-fade-in-up" : "opacity-0",
+  const rise = (delay: number) => ({
+    className: inView ? "animate-velvet-rise" : "opacity-0",
     style: { animationDelay: `${delay}s` } as React.CSSProperties,
   });
 
   return (
-    <section ref={ref} className="relative max-w-[1120px] mx-auto px-6 pt-12 md:pt-16 overflow-hidden">
-      <div className="pointer-events-none absolute inset-x-6 top-6 bottom-0 rounded-[48px] bg-[radial-gradient(circle_at_18%_20%,rgba(5,26,36,0.08),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(25,118,210,0.10),transparent_24%),linear-gradient(180deg,rgba(246,252,255,0.94),rgba(255,255,255,0))]" />
-      <div className="relative z-10 max-w-[1040px] mx-auto text-center pt-10 md:pt-12">
-        <h1
-          {...stage(0.1)}
-          className={`${stage(0.1).className} font-serif-display font-semibold tracking-tight mb-4 whitespace-nowrap`}
-          style={{ ...stage(0.1).style, color: "#051A24", fontSize: "clamp(26px, 6vw, 76px)" }}
+    <section
+      ref={ref}
+      className="relative min-h-[720px] md:min-h-screen w-full overflow-hidden bg-[#032534] text-white"
+    >
+      <img
+        src="/img/jetsoncar.jpg"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover opacity-20 mix-blend-screen"
+      />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_22%,rgba(112,197,255,0.35),transparent_26%),radial-gradient(circle_at_80%_20%,rgba(180,255,226,0.18),transparent_28%),linear-gradient(180deg,rgba(3,37,52,0.60),rgba(3,37,52,0.96)_78%,#ffffff_100%)]" />
+      <div className="velvet-orb left-[8%] top-[24%] h-72 w-72" />
+      <div className="velvet-orb velvet-orb-delay right-[5%] top-[18%] h-96 w-96" />
+      <div className="velvet-orb velvet-orb-slow left-1/2 bottom-[14%] h-80 w-80" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px] opacity-25" />
+
+      <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-8">
+        <a href="#" className="font-serif-display text-3xl font-semibold tracking-tight text-white">
+          Nam<sup className="ml-1 text-xs font-normal">AI</sup>
+        </a>
+        <div className="hidden items-center gap-8 rounded-full px-6 py-3 text-sm text-white/68 md:flex">
+          {[
+            ["Research", "#research"],
+            ["Projects", "#work"],
+            ["Contact", "#contact"],
+          ].map(([label, href]) => (
+            <a key={label} href={href} className="transition-colors hover:text-white">
+              {label}
+            </a>
+          ))}
+        </div>
+        <a
+          href="https://zalo.me/0325235826"
+          target="_blank"
+          rel="noreferrer"
+          className="liquid-glass rounded-full px-5 py-2.5 text-sm text-white transition-transform hover:scale-[1.03]"
         >
-          Nguyen Ngo Nhat Nam
-        </h1>
-        <p
-          {...stage(0.2)}
-          className={`${stage(0.2).className} font-mono text-xs md:text-sm mb-2`}
-          style={{ ...stage(0.2).style, color: "#051A24" }}
-        >
-          AI Researcher · Autonomous Systems
-        </p>
-        <h2
-          {...stage(0.3)}
-          className={`${stage(0.3).className} text-[32px] md:text-[40px] lg:text-[44px] leading-[1.1] tracking-tight`}
-          style={{ ...stage(0.3).style, color: "#0D212C" }}
-        >
-          Build the <span className="font-serif-display">edge of vision,</span>
-          <br />
-          the <span className="font-serif-display">efficient way.</span>
-        </h2>
+          Start a chat
+        </a>
+      </nav>
+
+      <div className="hero-velvet-content relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pb-20 pt-14 text-center md:pb-28 md:pt-16">
         <div
-          className={`${stage(0.35).className} pointer-events-none mx-auto mt-6 hidden md:flex flex-wrap justify-center gap-3`}
-          style={stage(0.35).style}
+          {...rise(0.05)}
+          className={`${rise(0.05).className} hero-velvet-kicker liquid-glass mb-8 inline-flex flex-wrap items-center justify-center gap-2 rounded-full px-4 py-2 text-xs text-white/78 md:text-sm`}
+          style={rise(0.05).style}
         >
-          {["AI perception", "ADAS", "Edge VLM", "Autonomous car"].map((item) => (
-            <span
-              key={item}
-              className="rounded-full bg-white/80 px-4 py-2 text-xs shadow-[0_4px_20px_rgba(0,0,0,0.08)]"
-              style={{ color: "#051A24" }}
-            >
+          <span>AI Researcher</span>
+          <span className="text-white/35">/</span>
+          <span>Autonomous Systems</span>
+          <span className="text-white/35">/</span>
+          <span>Edge Vision</span>
+        </div>
+        <h1
+          {...rise(0.1)}
+          className={`${rise(0.1).className} hero-velvet-title max-w-7xl font-serif-display font-semibold leading-[0.88] tracking-[-0.07em] text-white`}
+          style={{ ...rise(0.1).style, fontSize: "clamp(48px, 11vw, 144px)" }}
+        >
+          Nguyen Ngo
+          <br />
+          Nhat Nam
+        </h1>
+        <h2
+          {...rise(0.2)}
+          className={`${rise(0.2).className} hero-velvet-subtitle mt-6 max-w-4xl text-[28px] leading-[1.03] tracking-tight text-white/92 sm:text-[40px] md:text-[52px]`}
+          style={rise(0.2).style}
+        >
+          Building edge-ready vision for
+          <span className="font-serif-display text-white/56"> autonomous machines that understand roads.</span>
+        </h2>
+        <p
+          {...rise(0.3)}
+          className={`${rise(0.3).className} hero-velvet-copy mt-6 max-w-2xl text-sm leading-relaxed text-white/68 sm:text-base md:text-lg`}
+          style={rise(0.3).style}
+        >
+          AI undergraduate at FPT University Can Tho with three peer-reviewed
+          papers in Springer and Elsevier. I build lightweight computer-vision
+          systems for ADAS, autonomous driving, and edge deployment.
+        </p>
+        <div {...rise(0.4)} className={`${rise(0.4).className} hero-velvet-chips mt-8 flex flex-wrap justify-center gap-3`} style={rise(0.4).style}>
+          {["Computer Vision", "ADAS", "GroundingDINO", "Efficient VLM", "Jetson / Edge AI"].map((item) => (
+            <span key={item} className="liquid-glass rounded-full px-4 py-2 text-xs text-white/76">
               {item}
             </span>
           ))}
         </div>
-        <div
-          {...stage(0.4)}
-          className={`${stage(0.4).className} flex flex-col gap-6 text-sm md:text-base leading-relaxed mt-5 md:mt-6`}
-          style={{ ...stage(0.4).style, color: "#051A24" }}
-        >
-          <p>
-            I am an AI undergraduate at FPT University Can Tho (GPA 8.77/10)
-            with three peer-reviewed papers in Springer and Elsevier on
-            Computer Vision and Autonomous Systems.
-          </p>
-          <p>
-            My focus is delivering lightweight, high-performance models for
-            edge devices, from OrthoAdapt-style CLIP adaptation to
-            traffic-sign detection for ADAS and autonomous driving.
-          </p>
-          <p>Open to Intern / Fresher AI R&amp;D Engineer roles.</p>
-        </div>
-        <div
-          {...stage(0.5)}
-          className={`${stage(0.5).className} flex flex-col sm:flex-row justify-center gap-3 md:gap-4 mt-5 md:mt-6`}
-          style={stage(0.5).style}
-        >
-          <Button href="mailto:namnguyenfnw@gmail.com" variant="primary">
-            Get in touch
-          </Button>
-          <Button href="#work" variant="secondary">
+        <div {...rise(0.5)} className={`${rise(0.5).className} hero-velvet-actions mt-8 flex flex-col justify-center gap-4 sm:flex-row`} style={rise(0.5).style}>
+          <a
+            href="https://zalo.me/0325235826"
+            target="_blank"
+            rel="noreferrer"
+            className="liquid-glass rounded-full px-12 py-5 text-base text-white transition-transform hover:scale-[1.03]"
+          >
+            Start a chat
+          </a>
+          <a
+            href="#work"
+            className="rounded-full bg-white px-12 py-5 text-base font-medium text-[#032534] shadow-[0_20px_60px_rgba(255,255,255,0.18)] transition-transform hover:scale-[1.03]"
+          >
             View research
-          </Button>
+          </a>
         </div>
       </div>
     </section>
