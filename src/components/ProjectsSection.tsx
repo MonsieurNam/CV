@@ -10,17 +10,10 @@ const PROJECTS = [
     year: "2024",
   },
   {
-    name: "SingLoRA-CLIP",
-    desc: "Ultra-efficient VLM adaptation: replacing LoRA's dual-matrix update with a single symmetric matrix (AA^T) - 50% fewer trainable parameters, SOTA few-shot across 8 datasets.",
-    img: "/img/nguoi-tre-voi-nckh-enh-seg.jpg",
-    url: "https://github.com/MonsieurNam/singlora_clip",
-    year: "2025",
-  },
-  {
-    name: "Dissecting QLoRA",
-    desc: "Systematic analysis of static vs. dynamic memory in VLMs. Reduced peak training VRAM to 0.17 GB via gradient checkpointing, unlocking fine-tuning on consumer-grade and edge hardware.",
-    img: "/img/Nguoi-tre-voi-nckh-seg.jpg",
-    url: "https://github.com/MonsieurNam/QLORA_CLIP_IxT",
+    name: "OrthoAdapt",
+    desc: "Few-shot CLIP adaptation research code for gated multi-head symmetric adapters with orthogonal regularization. Includes ablations, robustness evaluation, and 4-shot benchmark visualization.",
+    img: "/img/combined_performance_4shot.png",
+    url: "https://github.com/MonsieurNam/OthorAdapt",
     year: "2025",
   },
   {
@@ -33,7 +26,7 @@ const PROJECTS = [
   {
     name: "PIXEL PLANE",
     desc: "Generative-AI Streamlit app that scales 100 images into 10,000 synthetic samples for autonomous-vehicle training, with GroundingDINO + SAM + PowerPaint + Stable Video Diffusion.",
-    img: "/img/autorace.jpg",
+    img: "/img/pixelplane.png",
     url: "https://github.com/MonsieurNam/PIXEL_PLANE",
     year: "2023",
   },

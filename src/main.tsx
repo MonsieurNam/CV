@@ -34,7 +34,7 @@ function Hero() {
     <section ref={ref} className="relative max-w-[1120px] mx-auto px-6 pt-12 md:pt-16 overflow-hidden">
       <div className="pointer-events-none absolute inset-x-6 top-6 bottom-0 rounded-[48px] bg-[radial-gradient(circle_at_18%_20%,rgba(5,26,36,0.08),transparent_28%),radial-gradient(circle_at_82%_18%,rgba(25,118,210,0.10),transparent_24%),linear-gradient(180deg,rgba(246,252,255,0.94),rgba(255,255,255,0))]" />
       <div
-        className={`${stage(0.15).className} pointer-events-none absolute right-8 md:right-16 top-28 hidden md:grid grid-cols-2 gap-3`}
+        className={`${stage(0.15).className} pointer-events-none relative z-10 mx-auto mt-8 hidden md:flex flex-wrap justify-center gap-3`}
         style={stage(0.15).style}
       >
         {["AI perception", "ADAS", "Edge VLM", "Autonomous car"].map((item) => (
@@ -48,7 +48,7 @@ function Hero() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-[720px] mx-auto text-center">
+      <div className="relative z-10 max-w-[720px] mx-auto text-center pt-10 md:pt-12">
         <h1
           {...stage(0.1)}
           className={`${stage(0.1).className} font-serif-display font-semibold tracking-tight mb-4 whitespace-nowrap`}
@@ -84,7 +84,7 @@ function Hero() {
           </p>
           <p>
             My focus is delivering lightweight, high-performance models for
-            edge devices, from VLM fine-tuning at 0.17 GB peak VRAM to
+            edge devices, from OrthoAdapt-style CLIP adaptation to
             traffic-sign detection for ADAS and autonomous driving.
           </p>
           <p>Open to Intern / Fresher AI R&amp;D Engineer roles.</p>

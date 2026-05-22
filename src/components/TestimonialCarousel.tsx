@@ -23,20 +23,6 @@ const PUBLICATIONS = [
     year: "2025",
     url: "https://www.sciencedirect.com/science/article/pii/S2215098625000837",
   },
-  {
-    quote:
-      "SingLoRA-CLIP - replacing the dual-matrix LoRA update with a single symmetric matrix, cutting trainable parameters by 50%.",
-    venue: "Independent research · 8 benchmark datasets",
-    year: "2025",
-    url: "https://github.com/MonsieurNam/singlora_clip",
-  },
-  {
-    quote:
-      "Dissecting QLoRA's efficiency for VLM adaptation - peak training VRAM driven down to 0.17 GB via gradient checkpointing.",
-    venue: "Independent research · Edge-hardware fine-tuning",
-    year: "2025",
-    url: "https://github.com/MonsieurNam/QLORA_CLIP_IxT",
-  },
 ];
 
 export function TestimonialCarousel() {
@@ -55,7 +41,7 @@ export function TestimonialCarousel() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {PUBLICATIONS.map((paper, index) => (
             <a
               key={paper.quote}
