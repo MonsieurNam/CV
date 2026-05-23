@@ -49,7 +49,7 @@ function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] bg-[size:72px_72px] opacity-25" />
 
       <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-8">
-        <a href="#" className="font-serif-display text-3xl font-semibold tracking-tight text-white">
+        <a href="#" className="text-3xl font-semibold tracking-[-0.05em] text-white">
           Nam<sup className="ml-1 text-xs font-normal">AI</sup>
         </a>
         <div className="hidden items-center gap-8 rounded-full px-6 py-3 text-sm text-white/68 md:flex">
@@ -63,14 +63,9 @@ function Hero() {
             </a>
           ))}
         </div>
-        <a
-          href="https://zalo.me/0325235826"
-          target="_blank"
-          rel="noreferrer"
-          className="liquid-glass rounded-full px-5 py-2.5 text-sm text-white transition-transform hover:scale-[1.03]"
-        >
-          Start a chat
-        </a>
+        <span className="liquid-glass rounded-full px-5 py-2.5 text-sm text-white/78">
+          Available 2026
+        </span>
       </nav>
 
       <div className="hero-velvet-content relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pb-20 pt-14 text-center md:pb-28 md:pt-16">
@@ -100,7 +95,7 @@ function Hero() {
           style={rise(0.2).style}
         >
           Building edge-ready vision for
-          <span className="font-serif-display text-white/56"> autonomous machines that understand roads.</span>
+          <span className="text-white/56"> autonomous machines that understand roads.</span>
         </h2>
         <p
           {...rise(0.3)}

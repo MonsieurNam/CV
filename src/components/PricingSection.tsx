@@ -43,8 +43,12 @@ export function PricingSection() {
               <div className="text-2xl text-[#0D212C]">Available 2026</div>
               <div className="text-sm text-[#051A24]/70 mt-1">Can Tho, Vietnam · Open to remote</div>
             </div>
-            <div className="mt-8 flex justify-center">
-              <Button href="https://zalo.me/0325235826" target="_blank" rel="noreferrer" variant="tertiary">Start a chat</Button>
+            <div className="mt-8 flex flex-wrap justify-center gap-2 text-xs font-medium">
+              {["ADAS", "Autonomous Driving", "Edge Vision"].map((item) => (
+                <span key={item} className="rounded-full bg-[#ECF1F5] px-3 py-1.5 text-[#051A24]">
+                  {item}
+                </span>
+              ))}
             </div>
           </div>
         </div>

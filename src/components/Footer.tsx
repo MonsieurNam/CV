@@ -1,13 +1,17 @@
 import { ArrowUpRight } from "lucide-react";
-import { Button } from "./Button";
 
 export function Footer() {
   const link = "text-base hover:opacity-70 transition-opacity";
   return (
     <footer className="max-w-[1200px] mx-auto px-6 py-12">
       <div className="flex flex-col md:flex-row gap-10 md:justify-between">
-        <div>
-          <Button href="https://zalo.me/0325235826" target="_blank" rel="noreferrer" variant="primary">Start a chat</Button>
+        <div className="max-w-sm">
+          <div className="text-lg font-medium tracking-[-0.03em]" style={{ color: "#051A24" }}>
+            Nguyen Ngo Nhat Nam
+          </div>
+          <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(5,26,36,0.64)" }}>
+            AI research portfolio for computer vision, ADAS, edge systems, and efficient model adaptation.
+          </p>
         </div>
         <div className="flex items-start gap-8">
           <ArrowUpRight className="w-6 h-6 mt-1" style={{ color: "#051A24" }} />

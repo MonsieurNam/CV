@@ -1,5 +1,4 @@
 import { useRef, useState, useEffect } from "react";
-import { Button } from "./Button";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
 const IMAGES = [
@@ -17,7 +16,7 @@ type Spawn = { id: number; x: number; y: number; rot: number; src: string; born:
 
 export function PartnerSection() {
   const { ref: animRef, inView } = useInViewAnimation<HTMLDivElement>();
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLAnchorElement | null>(null);
   const [spawns, setSpawns] = useState<Spawn[]>([]);
   const lastSpawn = useRef(0);
   const idRef = useRef(0);
@@ -49,10 +48,14 @@ export function PartnerSection() {
 
   return (
     <section id="contact" className="w-full py-12 px-6" ref={animRef}>
-      <div
+      <a
         ref={containerRef}
         onMouseMove={onMove}
-        className="relative max-w-7xl mx-auto py-36 md:py-48 rounded-[40px] bg-white overflow-hidden"
+        href="https://zalo.me/0325235826"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Start a Zalo chat with Nguyen Ngo Nhat Nam"
+        className="group relative block max-w-7xl mx-auto py-36 md:py-48 rounded-[40px] bg-white overflow-hidden transition-transform duration-500 hover:-translate-y-1 focus:outline-none focus-visible:ring-4 focus-visible:ring-[#0D212C]/20"
         style={{
           boxShadow: "0 4px 30px rgba(0,0,0,0.06), 0 0 0 0.5px rgba(0,0,0,0.05)",
           background:
@@ -92,7 +95,7 @@ export function PartnerSection() {
         })}
         <div className="relative z-10 flex flex-col items-center text-center px-6">
           <h2
-            className={`${inView ? "animate-fade-in-up" : "opacity-0"} font-serif-display text-[48px] md:text-[64px] lg:text-[80px] mb-6 md:mb-12`}
+            className={`${inView ? "animate-fade-in-up" : "opacity-0"} text-[48px] md:text-[64px] lg:text-[80px] mb-6 md:mb-12 font-medium tracking-[-0.06em]`}
             style={{ color: "#0D212C", animationDelay: "0.1s" }}
           >
             Let's build together
@@ -103,22 +106,15 @@ export function PartnerSection() {
           >
             Move your cursor here to reveal moments from AI research, mentoring, robotics, and autonomous-car work.
           </p>
-          <Button
-            href="https://zalo.me/0325235826"
-            target="_blank"
-            rel="noreferrer"
-            variant="primary"
-            className={`${inView ? "animate-fade-in-up" : "opacity-0"} !pl-2`}
+          <div
+            className={`${inView ? "animate-fade-in-up" : "opacity-0"} inline-flex items-center gap-3 rounded-full bg-[#051A24] px-5 py-3 text-sm font-medium text-white transition-transform duration-300 group-hover:scale-[1.03]`}
+            style={{ animationDelay: "0.26s" }}
           >
-            <img
-              src="/img/me.jpg"
-              alt="Nam"
-              className="w-10 h-10 rounded-full object-cover"
-            />
-            <span>Start a chat with Nam</span>
-          </Button>
+            <img src="/img/me.jpg" alt="" className="h-9 w-9 rounded-full object-cover" />
+            <span>Open Zalo conversation</span>
+          </div>
         </div>
-      </div>
+      </a>
     </section>
   );
 }
