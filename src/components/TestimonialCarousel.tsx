@@ -18,7 +18,7 @@ const PUBLICATIONS = [
   },
   {
     quote:
-      "Grounding DINO and Distillation-Enhanced Model for Traffic Sign Detection.",
+      "Semantic-Guided and Distillation-Enhanced Model for Traffic Sign Detection.",
     venue: "ScienceDirect / Elsevier",
     year: "2025",
     url: "https://www.sciencedirect.com/science/article/pii/S2215098625000837",

@@ -107,7 +107,7 @@ function Hero() {
           systems for ADAS, autonomous driving, and edge deployment.
         </p>
         <div {...rise(0.4)} className={`${rise(0.4).className} hero-velvet-chips mt-8 flex flex-wrap justify-center gap-3`} style={rise(0.4).style}>
-          {["Computer Vision", "ADAS", "GroundingDINO", "Efficient VLM", "Jetson / Edge AI"].map((item) => (
+          {["Computer Vision", "ADAS", "Open-vocabulary Detection", "Efficient VLM", "Jetson / Edge AI"].map((item) => (
             <span key={item} className="liquid-glass rounded-full px-4 py-2 text-xs text-white/76">
               {item}
             </span>
