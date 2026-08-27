@@ -194,6 +194,25 @@ html, body {
   .animate-marquee { animation-duration: 10s; }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-marquee,
+  .animate-fade-in-up,
+  .animate-velvet-rise,
+  .velvet-orb {
+    animation: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 .btn-primary-shadow {
   box-shadow:
     0 1px 2px 0 rgba(5,26,36,0.1),

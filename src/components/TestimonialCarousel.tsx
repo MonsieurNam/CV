@@ -1,27 +1,51 @@
 import { BookOpen, ArrowUpRight } from "lucide-react";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 
+type PublicationBadge = {
+  type: "quartile" | "coreRank";
+  label: string;
+};
+
 const PUBLICATIONS = [
   {
     quote:
-      "Enhancing Semantic Scene Segmentation for Indoor Autonomous Systems Using Advanced Attention-Supported Improved UNet.",
-    venue: "Signal, Image and Video Processing - Springer",
-    year: "2025",
-    url: "https://link.springer.com/article/10.1007/s11760-024-03779-w",
+      "SingLoRA-CLIP: Highly Efficient VLM Adaptation with a Single Parameter Matrix",
+    venue: "ICCSA 2026, Springer LNCS 16768, pp. 251-263",
+    year: "2026",
+    url: "https://doi.org/10.1007/978-3-032-30488-9_16",
+    badge: { type: "coreRank", label: "CORE C" } satisfies PublicationBadge,
   },
   {
     quote:
-      "Semantic Scene Segmentation for Indoor Autonomous Vision Systems: Leveraging an Enhanced and Efficient U-Net Architecture.",
-    venue: "Multimedia Tools and Applications - Springer",
-    year: "2025",
-    url: "https://link.springer.com/article/10.1007/s11042-024-19302-9",
+      "Enhancing AGWO-YOLO for Surveillance: Real-Time Human Detection with Adaptive Grey Wolf Optimizer",
+    venue: "ACIIDS 2026, Springer LNAI 16530, pp. 370-383",
+    year: "2026",
+    url: "https://doi.org/10.1007/978-981-92-0071-9_25",
+    badge: { type: "coreRank", label: "CORE B" } satisfies PublicationBadge,
   },
   {
     quote:
-      "Semantic-Guided and Distillation-Enhanced Model for Traffic Sign Detection.",
-    venue: "ScienceDirect / Elsevier",
+      "Grounding DINO and distillation-enhanced model for advanced traffic sign detection and classification in autonomous vehicles",
+    venue: "Engineering Science and Technology, an International Journal 64, 102028",
     year: "2025",
     url: "https://www.sciencedirect.com/science/article/pii/S2215098625000837",
+    badge: { type: "quartile", label: "Q1" } satisfies PublicationBadge,
+  },
+  {
+    quote:
+      "Enhancing semantic scene segmentation for indoor autonomous systems using advanced attention-supported improved UNet",
+    venue: "Signal, Image and Video Processing 19 (2), 190",
+    year: "2025",
+    url: "https://link.springer.com/article/10.1007/s11760-024-03779-w",
+    badge: { type: "quartile", label: "Q2" } satisfies PublicationBadge,
+  },
+  {
+    quote:
+      "Semantic scene segmentation for indoor autonomous vision systems: leveraging an enhanced and efficient U-NET architecture",
+    venue: "Multimedia Tools and Applications 84 (11), 9341-9365",
+    year: "2025",
+    url: "https://link.springer.com/article/10.1007/s11042-024-19302-9",
+    badge: { type: "quartile", label: "Q1" } satisfies PublicationBadge,
   },
 ];
 
@@ -37,25 +61,33 @@ export function TestimonialCarousel() {
           </h2>
           <div className="flex items-center gap-2 text-sm" style={{ color: "#051A24" }}>
             <BookOpen className="w-5 h-5" />
-            <span className="ml-1">3 peer-reviewed papers · Springer / Elsevier</span>
+            <span className="ml-1">5 peer-reviewed publications across Springer and Elsevier</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {PUBLICATIONS.map((paper, index) => (
             <a
               key={paper.quote}
               href={paper.url}
               target="_blank"
               rel="noreferrer"
-              className={`${inView ? "animate-fade-in-up" : "opacity-0"} group relative overflow-hidden bg-white rounded-[32px] md:rounded-[40px] px-6 md:px-10 py-8 ring-1 ring-black/5 shadow-[0_4px_16px_rgba(0,0,0,0.06)] hover:shadow-[0_10px_28px_rgba(0,0,0,0.10)] hover:-translate-y-0.5 transition-all duration-300`}
+              className={`${inView ? "animate-fade-in-up" : "opacity-0"} ${index === 0 ? "md:col-span-2" : ""} group relative overflow-hidden rounded-[32px] bg-white px-6 py-8 shadow-[0_4px_16px_rgba(5,26,36,0.06)] ring-1 ring-black/5 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_10px_28px_rgba(5,26,36,0.10)] md:rounded-[40px] md:px-10`}
               style={{ animationDelay: `${0.12 + index * 0.08}s` }}
             >
               <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-[#E0EBF0] opacity-60 transition-transform group-hover:scale-125" />
               <div className="relative">
-                <div className="flex items-center justify-between gap-6 mb-6">
-                  <div className="w-12 h-12 rounded-full bg-[#0D212C] text-white flex items-center justify-center text-sm font-semibold">
-                    {paper.year}
+                <div className="mb-6 flex items-center justify-between gap-6">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#0D212C] text-sm font-semibold text-white">
+                      {paper.year}
+                    </div>
+                    <span
+                      className="rounded-full border border-[#0D6B83]/15 bg-[#E4F2F6] px-3 py-1.5 text-xs font-semibold text-[#0D5D74]"
+                      aria-label={`${paper.badge.type === "quartile" ? "Journal quartile" : "CORE conference rank"} ${paper.badge.label}`}
+                    >
+                      {paper.badge.label}
+                    </span>
                   </div>
                   <ArrowUpRight className="w-5 h-5" style={{ color: "#0D212C" }} />
                 </div>

@@ -12,6 +12,14 @@ export function Footer() {
           <p className="mt-2 text-sm leading-relaxed" style={{ color: "rgba(5,26,36,0.64)" }}>
             AI research portfolio for computer vision, ADAS, edge systems, and efficient model adaptation.
           </p>
+          <div className="mt-5 flex flex-col items-start gap-2 text-sm" style={{ color: "#051A24" }}>
+            <a href="mailto:namnguyenfnw@gmail.com" className="transition-opacity hover:opacity-65">
+              namnguyenfnw@gmail.com
+            </a>
+            <a href="tel:+84325235826" className="transition-opacity hover:opacity-65">
+              0325235826
+            </a>
+          </div>
         </div>
         <div className="flex items-start gap-8">
           <ArrowUpRight className="w-6 h-6 mt-1" style={{ color: "#051A24" }} />

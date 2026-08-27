@@ -6,6 +6,7 @@ import { Footer } from "@/components/Footer";
 import { PartnerSection } from "@/components/PartnerSection";
 import { PricingSection } from "@/components/PricingSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
+import { ResfesSection } from "@/components/ResfesSection";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { TestimonialSection } from "@/components/TestimonialSection";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
@@ -20,6 +21,10 @@ const MARQUEE_IMAGES = [
   "/img/nguoi-tre-voi-nckh-enh-seg.jpg",
   "/img/Nguoi-tre-voi-nckh-seg.jpg",
   "/img/teamlead.jpg",
+  "/img/resfes1.jpg",
+  "/img/resfes2.jpg",
+  "/img/resfes3.jpg",
+  "/img/resfes4.jpg",
 ];
 
 function Hero() {
@@ -102,8 +107,8 @@ function Hero() {
           className={`${rise(0.3).className} hero-velvet-copy mt-6 max-w-2xl text-sm leading-relaxed text-white/68 sm:text-base md:text-lg`}
           style={rise(0.3).style}
         >
-          AI undergraduate at FPT University Can Tho with three peer-reviewed
-          papers in Springer and Elsevier. I build lightweight computer-vision
+          AI undergraduate at FPT University Can Tho with five peer-reviewed
+          publications from Springer and Elsevier. I build lightweight computer-vision
           systems for ADAS, autonomous driving, and edge deployment.
         </p>
         <div {...rise(0.4)} className={`${rise(0.4).className} hero-velvet-chips mt-8 flex flex-wrap justify-center gap-3`} style={rise(0.4).style}>
@@ -140,13 +145,17 @@ function Marquee() {
     <div className="w-full mt-16 md:mt-20 mb-16 overflow-hidden">
       <div className="flex animate-marquee w-max">
         {items.map((src, index) => (
-          <img
+          <div
             key={`${src}-${index}`}
-            src={src}
-            alt=""
-            className="h-[240px] md:h-[420px] mx-3 rounded-2xl shadow-lg object-cover"
-            style={{ minWidth: 320 }}
-          />
+            className="relative mx-3 h-[240px] w-[320px] shrink-0 overflow-hidden rounded-2xl bg-[#E2EAF0] shadow-lg md:h-[420px] md:w-[560px]"
+          >
+            <img
+              src={src}
+              alt=""
+              aria-hidden="true"
+              className={`absolute inset-0 h-full w-full object-cover ${src.endsWith("resfes2.jpg") ? "-rotate-90 scale-[1.34]" : ""}`}
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -164,6 +173,7 @@ function App() {
       <TestimonialCarousel />
       <div className="soft-divider my-10" />
       <ProjectsSection />
+      <ResfesSection />
       <PartnerSection />
       <Footer />
       <CopyrightBar />
