@@ -3,6 +3,7 @@ import { createRoot } from "react-dom/client";
 import { BottomNav } from "@/components/BottomNav";
 import { CopyrightBar } from "@/components/CopyrightBar";
 import { Footer } from "@/components/Footer";
+import { ImageLightbox, type LightboxImage } from "@/components/ImageLightbox";
 import { PartnerSection } from "@/components/PartnerSection";
 import { PricingSection } from "@/components/PricingSection";
 import { ProjectsSection } from "@/components/ProjectsSection";
@@ -12,19 +13,19 @@ import { TestimonialSection } from "@/components/TestimonialSection";
 import { useInViewAnimation } from "@/hooks/useInViewAnimation";
 import "./styles.css";
 
-const MARQUEE_IMAGES = [
-  "/img/giai-nhat-AIchallegePTIT.jpg",
-  "/img/jetsoncar.jpg",
-  "/img/autorace.jpg",
-  "/img/vorc.jpg",
-  "/img/mentor_autorace2024.jpg",
-  "/img/nguoi-tre-voi-nckh-enh-seg.jpg",
-  "/img/Nguoi-tre-voi-nckh-seg.jpg",
-  "/img/teamlead.jpg",
-  "/img/resfes1.jpg",
-  "/img/resfes2.jpg",
-  "/img/resfes3.jpg",
-  "/img/resfes4.jpg",
+const MARQUEE_IMAGES: LightboxImage[] = [
+  { src: "/img/giai-nhat-AIchallegePTIT.jpg", alt: "AI Challenge PTIT 2024 first-prize team" },
+  { src: "/img/jetsoncar.jpg", alt: "Jetson autonomous car prototype" },
+  { src: "/img/autorace.jpg", alt: "FPT AutoRace autonomous car team" },
+  { src: "/img/vorc.jpg", alt: "Vietnam Open Robotics Challenge competition" },
+  { src: "/img/mentor_autorace2024.jpg", alt: "Mentoring an autonomous racing team in 2024" },
+  { src: "/img/nguoi-tre-voi-nckh-enh-seg.jpg", alt: "Research article about enhanced indoor scene segmentation" },
+  { src: "/img/Nguoi-tre-voi-nckh-seg.jpg", alt: "Research article about indoor autonomous vision segmentation" },
+  { src: "/img/teamlead.jpg", alt: "AI research project team" },
+  { src: "/img/resfes1.jpg", alt: "ResFes 2025 team presenting research posters" },
+  { src: "/img/resfes2.jpg", alt: "ResFes 2025 Second Runner-up medals", rotate: true },
+  { src: "/img/resfes3.jpg", alt: "ResFes 2025 team receiving the Second Runner-up award" },
+  { src: "/img/resfes4.jpg", alt: "ResFes 2025 team beside their research posters" },
 ];
 
 function Hero() {
@@ -140,24 +141,30 @@ function Hero() {
 }
 
 function Marquee() {
+  const [selectedImage, setSelectedImage] = React.useState<LightboxImage | null>(null);
   const items = [...MARQUEE_IMAGES, ...MARQUEE_IMAGES];
+
   return (
-    <div className="w-full mt-16 md:mt-20 mb-16 overflow-hidden">
-      <div className="flex animate-marquee w-max">
-        {items.map((src, index) => (
-          <div
-            key={`${src}-${index}`}
-            className="relative mx-3 h-[240px] w-[320px] shrink-0 overflow-hidden rounded-2xl bg-[#E2EAF0] shadow-lg md:h-[420px] md:w-[560px]"
+    <div className="marquee-viewport w-full mt-16 md:mt-20 mb-16 overflow-hidden">
+      <div className="flex animate-marquee w-max" data-paused={selectedImage ? "true" : undefined}>
+        {items.map((image, index) => (
+          <button
+            type="button"
+            key={`${image.src}-${index}`}
+            aria-label={`View full-size image: ${image.alt}`}
+            onClick={() => setSelectedImage(image)}
+            className="group relative mx-3 h-[240px] w-[320px] shrink-0 cursor-zoom-in overflow-hidden rounded-2xl border-0 bg-[#E2EAF0] p-0 text-left shadow-lg focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#0A7180]/45 md:h-[420px] md:w-[560px]"
           >
             <img
-              src={src}
+              src={image.src}
               alt=""
               aria-hidden="true"
-              className={`absolute inset-0 h-full w-full object-cover ${src.endsWith("resfes2.jpg") ? "-rotate-90 scale-[1.34]" : ""}`}
+              className={`absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.02] ${image.rotate ? "-rotate-90 scale-[1.34] group-hover:scale-[1.37]" : ""}`}
             />
-          </div>
+          </button>
         ))}
       </div>
+      <ImageLightbox image={selectedImage} onClose={() => setSelectedImage(null)} />
     </div>
   );
 }

@@ -9,6 +9,7 @@ const publications = read("src/components/TestimonialCarousel.tsx");
 const footer = read("src/components/Footer.tsx");
 const styles = read("src/styles.css");
 const resfesPath = join(root, "src/components/ResfesSection.tsx");
+const lightboxPath = join(root, "src/components/ImageLightbox.tsx");
 
 const failures = [];
 const expect = (condition, message) => {
@@ -66,6 +67,24 @@ expect(footer.includes("0325235826"), "Footer phone text is missing");
 expect(styles.includes("@media (prefers-reduced-motion: reduce)"), "Reduced-motion media query is missing");
 for (const className of [".animate-marquee", ".animate-fade-in-up", ".animate-velvet-rise", ".velvet-orb"]) {
   expect(styles.includes(className), `Reduced-motion coverage is missing for ${className}`);
+}
+
+expect(main.includes("marquee-viewport"), "Marquee viewport interaction hook is missing");
+expect(main.includes("data-paused"), "Marquee lightbox pause state is missing");
+expect(main.includes("setSelectedImage"), "Marquee image selection is missing");
+expect(main.includes("View full-size image"), "Marquee image controls need accessible labels");
+expect(
+  styles.includes(".marquee-viewport:hover .animate-marquee") &&
+    styles.includes("animation-play-state: paused"),
+  "Marquee does not pause on hover",
+);
+expect(existsSync(lightboxPath), "ImageLightbox.tsx is missing");
+if (existsSync(lightboxPath)) {
+  const lightbox = read("src/components/ImageLightbox.tsx");
+  expect(lightbox.includes("<dialog"), "Image lightbox must use a native dialog");
+  expect(lightbox.includes("showModal()"), "Image lightbox does not open modally");
+  expect(lightbox.includes("Close image preview"), "Image lightbox close button is not accessible");
+  expect(lightbox.includes("object-contain"), "Image lightbox must preserve the full image");
 }
 
 if (failures.length > 0) {
